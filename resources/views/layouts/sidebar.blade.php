@@ -59,7 +59,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="{{route('destination.home')}}">
             <i class="fas fa-warehouse"></i>
             <span>Destinos</span></a>
     </li>

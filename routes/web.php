@@ -12,3 +12,8 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+
+// Destination Routes
+Route::get('/destination', 'DestinationController@index')->name('destination.home');
+Route::get('/destination_create', 'DestinationController@create')->name('destination.create');
+Route::post('/destination_save', 'DestinationController@save')->name('destination.save');
