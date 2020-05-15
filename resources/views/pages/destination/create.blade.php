@@ -19,7 +19,9 @@
                     <label for="finalidade">Descrição do Destino</label>
                     <input type="text" name="finalidade" class="form-control" id="finalidade" placeholder="Digite a finalidade. Ex: Aterro, Incineração">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="col-md-12 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
             </form>
         </div>
     </div>

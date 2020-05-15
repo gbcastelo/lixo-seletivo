@@ -66,7 +66,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="{{route('user.home')}}">
             <i class="fas fa-user-edit"></i>
             <span>Usuários</span></a>
     </li>

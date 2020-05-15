@@ -28,7 +28,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Desenvolvido por Gabriel Castelo Garcia</span>
+                        <span>Desenvolvido por <a id="github" href="https://github.com/gbcastelo">Gabriel Castelo Garcia</a></span>
                     </div>
                 </div>
             </footer>
