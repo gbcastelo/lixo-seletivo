@@ -63,13 +63,14 @@
             <i class="fas fa-warehouse"></i>
             <span>Destinos</span></a>
     </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="{{route('user.home')}}">
-            <i class="fas fa-user-edit"></i>
-            <span>Usuários</span></a>
-    </li>
+    @can('edit users')
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('user.home')}}">
+                <i class="fas fa-user-edit"></i>
+                <span>Usuários</span></a>
+        </li>
+    @endcan
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

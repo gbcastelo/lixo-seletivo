@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\User;
+use Auth;
+
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -26,8 +27,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return User::permission('edit user')->get(); // Returns only users with the permission 'edit articles' (inherited or directly)
-
-        return view('home');
+        return view('pages.home.index');
     }
 }
