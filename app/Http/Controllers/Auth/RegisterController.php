@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Alert;
 
 class RegisterController extends Controller
 {
@@ -30,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -65,22 +66,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $role = Role::findById(1);
-        $permission = Permission::findById(1);
-        if ($data['permissao'] == '1') {
-            return User::create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'password' => Hash::make($data['password']),
-                auth()->user()->assignRole($role),
-                auth()->user()->givePermissionTo($permission),
-            ]);
-        } else {
-            return User::create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'password' => Hash::make($data['password']),
-            ]);
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+        
+        if ($data['permissao'] == 1) {
+            $user->givePermissionTo('edit users');
         }
+
+        Alert::success('Muito bem!', 'Usuário cadastrado com sucesso');
+
+        return $user;
     }
 }

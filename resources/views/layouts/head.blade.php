@@ -17,6 +17,7 @@
 <link href={{asset("css/sb-admin-2.min.css")}} rel="stylesheet">
 
 <link href={{asset("vendor/datatables/dataTables.bootstrap4.min.css")}} rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.13/dist/sweetalert2.all.min.js"></script>
 
 <style>
     #github {

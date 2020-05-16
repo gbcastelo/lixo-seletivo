@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.base')
 
 @section('content')
 <div class="container">
     <div class="col-md-12 d-flex justify-content-center flex-column align-items-center">
-        <h1>Adicionar novo destino</h1>
+        <h1 class="mb-3">Adicione um novo usuário</h1>
         <div class="col-md-8 mb-5">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
