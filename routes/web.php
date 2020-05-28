@@ -21,6 +21,8 @@ Auth::routes();
 Route::get('/destination', 'DestinationController@index')->name('destination.home');
 Route::get('/destination_create', 'DestinationController@create')->name('destination.create');
 Route::post('/destination_save', 'DestinationController@save')->name('destination.save');
+Route::get('/destination_edit/{id}', 'DestinationController@edit')->name('destination.edit');
+Route::post('/destination_delete', 'DestinationController@delete');
 
 // User Routes
 Route::group(['middleware' => ['can:edit users']], function () {
@@ -30,6 +32,6 @@ Route::group(['middleware' => ['can:edit users']], function () {
 
 
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');

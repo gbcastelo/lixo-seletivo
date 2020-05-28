@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use App\Destination;
+use Session;
 
 class DestinationController extends Controller
 {
@@ -13,7 +15,11 @@ class DestinationController extends Controller
     }
 
     public function index() {
-        return view('pages.destination.index');
+        $destinations = Destination::all();
+
+        return view('pages.destination.index')->with([
+            'destinations' => $destinations,
+        ]);
     }
 
     public function create() {
@@ -21,14 +27,61 @@ class DestinationController extends Controller
     }
 
     public function save(Request $request) {
-        $destino = new Destination;
+        
+        $validation = Validator::make($request->all(), [
+            'nome' => 'required|string',
+            'descricao' => 'required|string',
+            'finalidade' => 'required|string'
+        ]);
 
-        $destino->name = $request->nome;
-        $destino->description = $request->descricao;
-        $destino->finality = $request->finalidade;
+        if($validation->fails()) {
+            return redirect()->back()->with('errors');
+        }
 
-        $destino->save();
+        if ($request->id == null) {
+            $destination = new Destination;
+    
+            $destination->name = $request->nome;
+            $destination->description = $request->descricao;
+            $destination->finality = $request->finalidade;
+            
+            $destination->save();
 
-        return redirect()->back()->with('success', 'Destino salvo com sucesso!');
+            $request->session()->flash('success_new', 'Destino criado com sucesso!');
+            
+            return redirect()->route('destination.home');
+
+        } else {
+            $destination = Destination::where('id', $request->id)->first();
+
+            $destination->name = $request->nome;
+            $destination->description = $request->descricao;
+            $destination->finality = $request->finalidade;
+            
+            $destination->save();
+
+            $request->session()->flash('success_edit', 'Destino alterado com sucesso!');
+
+            return redirect()->route('destination.home');
+
+        }
+    }
+
+    public function edit($id) {
+        $destination = Destination::where('id', $id)->first();
+
+        return view('pages.destination.edit')->with([
+            'destination' => $destination,
+        ]);
+    }
+
+    public function delete(Request $request) {
+        $destination = Destination::where('id', $request->id)->delete();
+
+        $destinations = Destination::all();
+
+        return view('pages.destination.table_ajax')->with([
+            'destinations' => $destinations
+        ]);
     }
 }

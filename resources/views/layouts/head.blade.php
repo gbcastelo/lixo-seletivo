@@ -8,7 +8,11 @@
 <title>Lixo Seletivo</title>
 
 <!-- Custom fonts for this template-->
+<script src={{asset("vendor/jquery/jquery.min.js")}}></script>
 <link href={{asset("vendor/fontawesome-free/css/all.min.css")}} rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json"></script>
 <link
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
@@ -17,7 +21,7 @@
 <link href={{asset("css/sb-admin-2.min.css")}} rel="stylesheet">
 
 <link href={{asset("vendor/datatables/dataTables.bootstrap4.min.css")}} rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.13/dist/sweetalert2.all.min.js"></script>
+
 
 <style>
     #github {
