@@ -46,8 +46,8 @@
     <!-- Nav Item - Charts -->
     <li class="nav-item">
         <a class="nav-link" href="charts.html">
-            <i class="fas fa-list-ol"></i>
-            <span>Relatórios</span></a>
+            <i class="fas fa-apple-alt"></i>
+            <span>Materiais</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
