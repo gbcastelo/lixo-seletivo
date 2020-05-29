@@ -47,7 +47,7 @@ class DestinationController extends Controller
             
             $destination->save();
 
-            $request->session()->flash('success_new', 'Destino criado com sucesso!');
+            $request->session()->flash('success_new', 'Registro criado com sucesso!');
             
             return redirect()->route('destination.home');
 
@@ -60,7 +60,7 @@ class DestinationController extends Controller
             
             $destination->save();
 
-            $request->session()->flash('success_edit', 'Destino alterado com sucesso!');
+            $request->session()->flash('success_edit', 'Registro alterado com sucesso!');
 
             return redirect()->route('destination.home');
 

@@ -40,16 +40,4 @@
     </div>
 </div>
 
-@if(session('success'))
-<script>
-    $(function () {
-            Swal.fire(
-                'Sucesso!',
-                '{{session('success')}}',
-                'success'
-            )
-        });
-</script>
-@endif
-
 @endsection

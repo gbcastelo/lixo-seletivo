@@ -52,7 +52,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="{{route('employee.home')}}">
             <i class="fas fa-users"></i>
             <span>Funcionários</span></a>
     </li>
