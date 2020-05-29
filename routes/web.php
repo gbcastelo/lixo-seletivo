@@ -14,8 +14,6 @@
 Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
-// Home Routes
-// Route::get('/home', 'HomeController@index')->name('home');
 
 // Destination Routes
 Route::get('/destination', 'DestinationController@index')->name('destination.home');
@@ -24,14 +22,15 @@ Route::post('/destination_save', 'DestinationController@save')->name('destinatio
 Route::get('/destination_edit/{id}', 'DestinationController@edit')->name('destination.edit');
 Route::post('/destination_delete', 'DestinationController@delete');
 
+// Employee Routes
+Route::get('/employee', 'EmployeeController@index')->name('employee.home');
+Route::get('/employee_create', 'EmployeeController@create')->name('employee.create');
+Route::post('/employee_save', 'EmployeeController@save')->name('employee.save');
+Route::get('/employee_edit/{id}', 'EmployeeController@edit')->name('employee.edit');
+Route::post('/employee_delete', 'EmployeeController@delete');
+
 // User Routes
 Route::group(['middleware' => ['can:edit users']], function () {
     Route::get('/user', 'UserController@index')->name('user.home');
     Route::get('/user_create', 'UserController@create')->name('user.create');
 });
-
-
-
-// Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');

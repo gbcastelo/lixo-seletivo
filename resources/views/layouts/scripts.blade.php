@@ -9,11 +9,35 @@
 <script src={{asset("js/sb-admin-2.min.js")}}></script>
 
 <!-- Page level plugins -->
-<script src={{asset("vendor/datatables/jquery.dataTables.min.js")}}></script>
-<script src={{asset("vendor/datatables/dataTables.bootstrap4.min.js")}}></script>
+
 
 <!-- Page level custom scripts -->
 <script src={{asset("js/demo/datatables-demo.js")}}></script>
+
+<script src={{asset("vendor/datatables/jquery.dataTables.min.js")}}></script>
+<script src={{asset("vendor/datatables/dataTables.bootstrap4.min.js")}}></script>
+
+@if (Session::has('success_edit'))
+    <script>
+        swal({
+            type: 'success',
+            title: 'Sucesso!',
+            text: '{{Session::get('success_edit')}}'
+        })
+    </script>
+@endif
+
+@if (Session::has('success_new'))
+    <script>
+        swal({
+            type: 'success',
+            title: 'Sucesso!',
+            text: '{{Session::get('success_new')}}'
+        })
+    </script>
+@endif
+
+
 
 <script type="text/javascript">
     $('#dataTable').dataTable({

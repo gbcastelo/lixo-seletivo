@@ -3,15 +3,15 @@
 @section('content')
 <div class="container">
     <div class="d-flex justify-content-start">
-        <a href="{{route('destination.create')}}">
-            <button type="button" class="btn btn-success mb-4">Adicionar Destino</button>
+        <a href="{{route('employee.create')}}">
+            <button type="button" class="btn btn-success mb-4">Adicionar Funcionário</button>
         </a>
     </div>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
-            @component('pages.destination.table_ajax', ['destinations' => $destinations])
+            @component('pages.employee.table_ajax', ['employees' => $employees])
             @endcomponent
         </div>
     </div>
@@ -34,7 +34,7 @@ $(document).on('click', '#delete_button', function (e) {
         function() {
             $.ajax({
                 type: "POST",
-                url: "{{url('/destination_delete')}}",
+                url: "{{url('/employee_delete')}}",
                 data: {
                     "_token": "{{ csrf_token() }}",
                     id:id
