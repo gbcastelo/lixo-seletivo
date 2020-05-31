@@ -28,15 +28,11 @@ class DestinationController extends Controller
 
     public function save(Request $request) {
         
-        $validation = Validator::make($request->all(), [
-            'nome' => 'required|string',
-            'descricao' => 'required|string',
-            'finalidade' => 'required|string'
+        $validatedData = $request->validate([
+            'nome' => 'required|string|max:100',
+            'descricao' => 'required|string|max:255',
+            'finalidade' => 'required|string|max:100'
         ]);
-
-        if($validation->fails()) {
-            return redirect()->back()->with('errors');
-        }
 
         if ($request->id == null) {
             $destination = new Destination;
