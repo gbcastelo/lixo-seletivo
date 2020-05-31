@@ -45,7 +45,7 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="{{route('material.home')}}">
             <i class="fas fa-apple-alt"></i>
             <span>Materiais</span></a>
     </li>

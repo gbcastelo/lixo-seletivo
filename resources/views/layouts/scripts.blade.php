@@ -37,6 +37,21 @@
     </script>
 @endif
 
+<script>
+    @if ($errors->any())              
+        errors = {!! json_encode($errors->messages()) !!};
+            out = '';
+            for (var p in errors) {
+            out += errors[p] + '\n' ;
+            }
+        swal({
+            type: 'error',
+            title: 'Erro!',
+            text : `${out}`          
+        });
+    @endif
+</script>
+
 
 
 <script type="text/javascript">

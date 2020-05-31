@@ -3,15 +3,15 @@
 @section('content')
 <div class="container">
     <div class="d-flex justify-content-start">
-        <a href="{{route('user.create')}}">
-            <button type="button" class="btn btn-success mb-4">Adicionar Usuário</button>
+        <a href="{{route('material.create')}}">
+            <button type="button" class="btn btn-success mb-4">Adicionar Material</button>
         </a>
     </div>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
-            @component('pages.users.table_ajax', ['users' => $users])
+            @component('pages.material.table_ajax', ['materials' => $materials])
             @endcomponent
         </div>
     </div>
@@ -34,7 +34,7 @@ $(document).on('click', '#delete_button', function (e) {
         function() {
             $.ajax({
                 type: "POST",
-                url: "{{url('/user_delete')}}",
+                url: "{{url('/material_delete')}}",
                 data: {
                     "_token": "{{ csrf_token() }}",
                     id:id
@@ -52,15 +52,5 @@ $(document).on('click', '#delete_button', function (e) {
     });
 });
 </script>
-
-@if (Session::has('error_already'))
-<script>
-    swal({
-        type: 'warning',
-        title: 'Erro!',
-        text: '{{Session::get('error_already')}}'
-    })
-</script>
-@endif
 
 @endsection

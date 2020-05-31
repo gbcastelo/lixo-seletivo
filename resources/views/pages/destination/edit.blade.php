@@ -8,17 +8,17 @@
             <form method="POST" action="{{route('destination.save')}}">
                 @csrf
                 <div class="form-group">
-                    <label for="nome">Nome da Empresa</label>
+                    <label for="nome">Nome da Empresa:</label>
                     <input type="text" name="nome" class="form-control" id="nome"
                         placeholder="Digite o nome da empresa" value="{{$destination->name}}" required>
                 </div>
                 <div class="form-group">
-                    <label for="descricao">Descrição do Destino</label>
+                    <label for="descricao">Descrição do Destino:</label>
                     <input type="text" name="descricao" class="form-control" id="descricao"
                         placeholder="Digite uma breve descrição" value="{{$destination->description}}" required>
                 </div>
                 <div class="form-group">
-                    <label for="finalidade">Finalidade do Destino</label>
+                    <label for="finalidade">Finalidade do Destino:</label>
                     <input type="text" name="finalidade" class="form-control" id="finalidade"
                         placeholder="Digite a finalidade. Ex: Aterro, Incineração" value="{{$destination->finality}}" required>
                 </div>
@@ -26,15 +26,6 @@
                     <input type="hidden" name="id" value="{{$destination->id}}">
                     <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
-                @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
             </form>
         </div>
     </div>

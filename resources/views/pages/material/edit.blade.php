@@ -3,26 +3,22 @@
 @section('content')
 <div class="container">
     <div class="col-md-12 d-flex justify-content-center flex-column align-items-center">
-        <h1>Adicionar novo destino</h1>
+        <h1>Editar cadastro de material</h1>
         <div class="col-md-8 mb-5">
-            <form method="POST" action="{{route('destination.save')}}">
+            <form method="POST" action="{{route('material.save')}}">
                 @csrf
                 <div class="form-group">
-                    <label for="nome">Nome da Empresa:</label>
+                    <label for="nome">Nome do material:</label>
                     <input type="text" name="nome" class="form-control" id="nome"
-                        placeholder="Digite o nome da empresa">
+                        placeholder="Digite o nome do material" value="{{$material->name}}" required>
                 </div>
                 <div class="form-group">
-                    <label for="descricao">Descrição do Destino:</label>
+                    <label for="descricao">Descrição do Material:</label>
                     <input type="text" name="descricao" class="form-control" id="descricao"
-                        placeholder="Digite uma breve descrição">
-                </div>
-                <div class="form-group">
-                    <label for="finalidade">Finalidade do Destino:</label>
-                    <input type="text" name="finalidade" class="form-control" id="finalidade"
-                        placeholder="Digite a finalidade. Ex: Aterro, Incineração">
+                        placeholder="Digite uma breve descrição" value="{{$material->description}}" required>
                 </div>
                 <div class="col-md-12 d-flex justify-content-end">
+                    <input type="hidden" name="id" value="{{$material->id}}">
                     <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
             </form>
