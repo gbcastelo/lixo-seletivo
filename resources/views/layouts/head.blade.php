@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 <script src="https://cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
 <link
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -26,5 +28,24 @@
 <style>
     #github {
         color: green;
+    }
+
+    .button-actions {
+        color:transparent;
+        border-width: medium;
+        border-radius: 8px;
+        border: 2px solid #16ae1b;
+    }
+
+    .button-actions:hover {
+        background-color: #16ae1b40;
+    }
+
+    .far {
+        color: #16ae1b;
+    }
+
+    .fas {
+        color: #16ae1b;
     }
 </style>

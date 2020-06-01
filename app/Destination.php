@@ -10,4 +10,9 @@ class Destination extends Model
     use SoftDeletes;
 
     protected $table = 'destination';
+
+    public function trash()
+    {
+        return $this->belongsTo('App\Trash', 'id', 'destination_id');
+    }
 }

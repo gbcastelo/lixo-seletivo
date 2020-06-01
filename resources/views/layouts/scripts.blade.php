@@ -17,6 +17,8 @@
 <script src={{asset("vendor/datatables/jquery.dataTables.min.js")}}></script>
 <script src={{asset("vendor/datatables/dataTables.bootstrap4.min.js")}}></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
 @if (Session::has('success_edit'))
     <script>
         swal({
@@ -38,6 +40,19 @@
 @endif
 
 <script>
+    $(document).ready(function(){
+        $('#data').mask('00/00/0000');
+        $('#hora').mask('00:00');
+        $('.select_funcionarios').select2({
+            placeholder: "Selecione os funcionários"
+        });
+        $('.select_materiais').select2({
+            placeholder: "Selecione os materiais"
+        });
+    });
+</script>
+
+<script>
     @if ($errors->any())              
         errors = {!! json_encode($errors->messages()) !!};
             out = '';
@@ -51,6 +66,8 @@
         });
     @endif
 </script>
+
+
 
 
 

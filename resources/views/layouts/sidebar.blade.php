@@ -37,8 +37,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Opções:</h6>
-                <a class="collapse-item" href="buttons.html">Entrada</a>
-                <a class="collapse-item" href="cards.html">Saída</a>
+                <a class="collapse-item" href="{{route('trash.create.in')}}">Entrada</a>
+                <a class="collapse-item" href="{{route('trash.create.out')}}">Saída</a>
             </div>
         </div>
     </li>

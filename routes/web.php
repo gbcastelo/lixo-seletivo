@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'TrashController@index')->name('home');
 
 Auth::routes();
 
@@ -35,6 +35,14 @@ Route::get('/material_create', 'MaterialController@create')->name('material.crea
 Route::post('/material_save', 'MaterialController@save')->name('material.save');
 Route::get('/material_edit/{id}', 'MaterialController@edit')->name('material.edit');
 Route::post('/material_delete', 'MaterialController@delete')->name('material.delete');
+
+// Trash Routes
+Route::get('/trash_create_in', 'TrashController@create_in')->name('trash.create.in');
+Route::get('/trash_create_out', 'TrashController@create_out')->name('trash.create.out');
+Route::get('/trash_edit_in/{id}', 'TrashController@edit_in')->name('trash.edit.in');
+Route::get('/trash_edit_out/{out}', 'TrashController@edit_out')->name('trash.edit.out');
+Route::post('/trash_save', 'TrashController@save')->name('trash.save');
+Route::post('/trash_delete', 'TrashController@delete')->name('trash.delete');
 
 // User Routes
 Route::group(['middleware' => ['can:edit users']], function () {
