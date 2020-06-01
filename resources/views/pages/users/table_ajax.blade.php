@@ -1,13 +1,13 @@
 <div class="table-responsive">
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        <thead>
+        <thead style="background-color: #43c647;color: white;">
             <tr>
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Ações</th>
             </tr>
         </thead>
-        <tfoot>
+        <tfoot style="background-color: #43c647;color: white;">
             <tr>
                 <th>Nome</th>
                 <th>Email</th>
@@ -21,27 +21,27 @@
                 <td>{{$user->email}}</td>
                 <td>
                     <a href="{{route('user.edit.name', ['id' => $user->id])}}">
-                        <button title="Editar nome do usuário" type="button" class="btn btn-success" style="padding-right: 10px;">
+                        <button title="Editar nome do usuário" type="button" class="btn button-actions" style="padding-right: 10px;">
                             <i class="fas fa-user-edit"></i>
                         </button>
                     </a>
                     <a href="{{route('user.edit.email', ['id' => $user->id])}}">
-                        <button title="Editar email do usuário" type="button" class="btn btn-success" style="padding-right: 10px;">
+                        <button title="Editar email do usuário" type="button" class="btn button-actions" style="padding-right: 10px;">
                             <i class="fas fa-at"></i>
                         </button>
                     </a>
                     <a href="{{route('user.edit.pass', ['id' => $user->id])}}">
-                        <button title="Editar senha do usuário" type="button" class="btn btn-success" style="padding-right: 10px;">
+                        <button title="Editar senha do usuário" type="button" class="btn button-actions" style="padding-right: 10px;">
                             <i class="fas fa-unlock"></i>
                         </button>
                     </a>
                     <a href="{{route('user.edit.permission', ['id' => $user->id])}}">
-                        <button title="Editar permissão do usuário" type="button" class="btn btn-success" style="padding-right: 10px;">
+                        <button title="Editar permissão do usuário" type="button" class="btn button-actions" style="padding-right: 10px;">
                             <i class="fas fa-crown"></i>
                         </button>
                     </a>
                     <a href="" id="delete_button" data-id="{{$user->id}}">
-                        <button title="Excluir usuário" type="button" class="btn btn-success">
+                        <button title="Excluir usuário" type="button" class="btn button-actions">
                             <i class="far fa-trash-alt"></i>
                         </button>
                     </a>

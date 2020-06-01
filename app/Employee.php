@@ -10,4 +10,9 @@ class Employee extends Model
     use softDeletes;
 
     protected $table = 'employee';
+
+    public function trashs()
+    {
+        return $this->belongsToMany('App\Trash', 'employee_trash', 'employee_id', 'trash_id');
+    }
 }
