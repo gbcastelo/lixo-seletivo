@@ -71,8 +71,6 @@ class EmployeeController extends Controller
     public function delete(Request $request) {
         $employee = Employee::where('id', $request->id)->delete();
 
-        $employee->trashs()->detach($request->id);
-
         $employees = Employee::all();
 
         return view('pages.employee.table_ajax')->with([

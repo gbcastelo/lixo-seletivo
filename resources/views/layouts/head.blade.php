@@ -29,23 +29,4 @@
     #github {
         color: green;
     }
-
-    .button-actions {
-        color:transparent;
-        border-width: medium;
-        border-radius: 8px;
-        border: 2px solid #16ae1b;
-    }
-
-    .button-actions:hover {
-        background-color: #16ae1b40;
-    }
-
-    .far {
-        color: #16ae1b;
-    }
-
-    .fas {
-        color: #16ae1b;
-    }
 </style>

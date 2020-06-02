@@ -1,6 +1,6 @@
 <div class="table-responsive">
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        <thead style="background-color: #43c647;color: white;">
+        <thead>
             <tr>
                 <th>Data</th>
                 <th>Peso</th>
@@ -11,7 +11,7 @@
                 <th>Ações</th>
             </tr>
         </thead>
-        <tfoot style="background-color: #43c647;color: white;">
+        <tfoot>
             <tr>
                 <th>Data</th>
                 <th>Peso</th>
@@ -50,20 +50,20 @@
                 <td>
                     @if ($trash->type == 0)
                         <a href="{{route('trash.edit.in', ['id' => $trash->id])}}">
-                            <button type="button" class="btn button-actions" style="padding-right: 10px;">
+                            <button type="button" class="btn btn btn-success" style="padding-right: 10px;">
                                 <i class="far fa-edit"></i>
                             </button>
                         </a>
                     @else
                         <a href="{{route('trash.edit.out', ['id' => $trash->id])}}">
-                            <button type="button" class="btn button-actions" style="padding-right: 10px;">
+                            <button type="button" class="btn btn btn-success" style="padding-right: 10px;">
                                 <i class="far fa-edit"></i>
                             </button>
                         </a>
                         
                     @endif
                     <a href="" id="delete_button" data-id="{{$trash->id}}">
-                        <button type="button" class="btn button-actions">
+                        <button type="button" class="btn btn btn-success">
                             <i class="far fa-trash-alt"></i>
                         </button>
                     </a>
